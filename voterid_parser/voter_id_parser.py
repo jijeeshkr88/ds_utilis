@@ -4,8 +4,8 @@ import re
 id_pattern = r'\s[A-Z]{3}[0-9]{7}'
 age_pattern = r'Age :'
 name_pattern = r'Name :'
-parent_list = ["Mother's Name :","Husband's Name :","Father's Name :","Husband's   ",
-"Mother's   ","Father's   "]
+parent_list = ["Mother's Name :","Husband's Name :","Father's Name :","Husband's  ",
+"Mother's  ","Father's  "]
 house_pattern = r'House No :'
 gender_list = ["Age :","Gender :"]
 number_pattern = r'\s[0-9]{1,3}\s'
@@ -89,7 +89,7 @@ def name_parse(line):
 
 def gurdian_parse(line):
 	gurdian_list = []
-	for seg in line.split("     "):
+	for seg in line.split("         "):
 		if len(seg)>1:
 			for i in parent_list:
 				sp = seg.split(i)
@@ -133,13 +133,6 @@ if __name__ == '__main__':
 	file_name = "./data/sample_pdf.txt"
 	text_ = read_text(file_name)
 	segs,parsed_list = segment_parse(text_)
-
-
-
-
-
-
-
 
 
 
