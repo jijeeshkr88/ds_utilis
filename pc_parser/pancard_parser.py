@@ -1,7 +1,7 @@
 import cv2
+import Image
 import pytesseract
 import numpy as np
-
 
 
 def image_preprocessing(img_path):
@@ -19,11 +19,11 @@ def img2text(img_bw):
 	data = text.split("\n")
 	return data
 
-
 if __name__ == '__main__':
 	file_name = "./data/image01.jpg"
 	bw_img = image_preprocessing(file_name)
 	print(img2text(bw_img))
+	
 
 
 
